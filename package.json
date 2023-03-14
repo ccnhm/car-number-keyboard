@@ -1,14 +1,19 @@
 {
   "name": "car-number-keyboard",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.10",
+  "description":"车牌号码输入键盘",
+  "keywords": [ "车牌号", "vue", "键盘","移动端车牌号键盘" ],
+  "private": false,
   "scripts": {
+    "lib": "vue-cli-service build --target lib --name keyboard --dest lib packages/index.js",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "amfe-flexible": "^2.2.1",
     "core-js": "^3.8.3",
+    "postcss-pxtorem": "^6.0.0",
     "vue": "^3.2.13"
   },
   "devDependencies": {
@@ -39,5 +44,7 @@
     "last 2 versions",
     "not dead",
     "not ie 11"
-  ]
+  ],
+  "main": "lib/keyboard.umd.min.js",
+  "types": "types/keyboard.umd.d.ts"
 }

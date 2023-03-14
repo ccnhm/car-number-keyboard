@@ -1,0 +1,26 @@
+# 忽略目录
+
+.DS_Store
+
+node_modules
+
+packages/
+
+public/
+
+src/
+
+examples/
+
+# 忽略指定文件
+
+
+vue.config.js
+
+babel.config.js
+
+jsconfig.json
+
+postcss.config.js
+
+*.map
