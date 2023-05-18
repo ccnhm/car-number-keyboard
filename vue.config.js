@@ -7,6 +7,7 @@ module.exports = defineConfig({
       filename: 'index.html'
     }
   },
+  publicPath: "./",
   transpileDependencies: true,
   lintOnSave:false,
   chainWebpack: config => {

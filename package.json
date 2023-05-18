@@ -1,11 +1,16 @@
 {
   "name": "car-number-keyboard",
-  "version": "0.1.10",
-  "description":"车牌号码输入键盘",
-  "keywords": [ "车牌号", "vue", "键盘","移动端车牌号键盘" ],
+  "version": "0.1.12",
+  "description": "车牌号码输入键盘",
+  "keywords": [
+    "车牌号",
+    "vue",
+    "键盘",
+    "移动端车牌号键盘"
+  ],
   "private": false,
   "scripts": {
-    "lib": "vue-cli-service build --target lib --name keyboard --dest lib packages/index.js",
+    "lib": "vue-cli-service build --target lib ./packages/index.js --name keyboard --dest lib",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
@@ -23,7 +28,8 @@
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3"
+    "eslint-plugin-vue": "^8.0.3",
+    "vue-tsc": "^1.2.0"
   },
   "eslintConfig": {
     "root": true,

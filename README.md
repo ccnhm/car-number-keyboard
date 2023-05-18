@@ -22,8 +22,7 @@ main.js 中导入 rem 转换 和全局引入组件
 import Vue from 'vue'
 import 'amfe-flexible'
 import carNumberKeyboard from 'car-number-keyboard'
-import 'car-number-keyboard/lib/
-keyboard.css' // 引入样式
+import 'car-number-keyboard/lib/keyboard.css' // 引入样式
 Vue.use(carNumberKeyboard)
 
 在postcss.config.js中配置rem选项参数
@@ -44,23 +43,25 @@ module.exports = {
 
 ```
 在相关业务中使用组件
-<carNumberKeyboard 
-showInputBox="true"
-showKeyboardInputBox="false" />
+<carNumberKeyboard />
 ```
  
 ## Props
  
 属性 | 说明 | 类型 | 默认值
 :--- | :--- | :--- | :---
-showInputBox | 是否显示组件的车牌号输入框 | Boolean（可选） | true
-showKeyboardInputBox | 是否显示组件键盘上的车牌号输入框 | Boolean（可选） | false
+title | 标题 | String（可选） | true
+value | 初始回填值 | String 或 Array（可选） | ""
+HkCarNoSupport | 是否支持港澳车牌 | Boolean（可选） | true
+completeHideKeyboard | 完成后自动收起键盘 | Boolean（可选） | true
+autoCarNoTypeMatch | 初始回填值 | 是否根据车辆初始回填值自动识别为大陆车牌或港澳车牌 (此项设置需开启HkCarNoSupport:true) | true
+
 
 ## 方法
  
 方法 | 说明 | 回调参数
 :--- | :--- | :--- 
-onChange | 键盘值改变回调 | （val,curIndex） 当前车牌号值（数组类型）
+onChange | 键盘值改变回调 | (val,true || false) 当前车牌号值（数组类型）,是否是港澳车牌
 onClose | 键盘关闭回调 | empty
  
 
