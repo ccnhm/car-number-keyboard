@@ -3,7 +3,10 @@
     <!-- <div class="inputBox">
       <div class="inputItem" :class="{active:curIndex===index}" v-for="(item,index) in 8" :key="index"  @click="inputClick(index)">{{carNoChar(index)}}</div>  
     </div> -->
-  <carNumberKeyboard  :value="carNo" :firstFocus="true"  @onChange="keyboardChange"></carNumberKeyboard>
+    <div class="box">
+      <carNumberKeyboard  :value="carNo" :firstFocus="true"  @onChange="keyboardChange"></carNumberKeyboard>
+    </div>
+  
 </div>
 </template>
 
@@ -59,7 +62,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 .inputBox{
   display: flex;
@@ -74,5 +76,8 @@ export default {
 }
 .active{
   border: 1px solid #3f9ffd;
+}
+.box{
+  padding: 20px ;
 }
 </style>

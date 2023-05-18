@@ -1,5 +1,10 @@
 # car-number-keyboard 
 
+## [在线预览效果](https://ccnhm.github.io/car-number-keyboard/dist/index.html)
+
+
+[https://ccnhm.github.io/car-number-keyboard/dist/index.html](https://ccnhm.github.io/car-number-keyboard/dist/index.html)
+
 ## 说明
 
 ```
@@ -61,7 +66,7 @@ autoCarNoTypeMatch | 初始回填值 | 是否根据车辆初始回填值自动�
  
 方法 | 说明 | 回调参数
 :--- | :--- | :--- 
-onChange | 键盘值改变回调 | (val,true || false) 当前车牌号值（数组类型）,是否是港澳车牌
+onChange | 键盘值改变回调 | (val,true or false) 当前车牌号值（数组类型）,是否是港澳车牌
 onClose | 键盘关闭回调 | empty
  
 
