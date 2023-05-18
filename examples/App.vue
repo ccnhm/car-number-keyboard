@@ -24,7 +24,7 @@ export default {
   },
   mounted(){
     setTimeout(() => {
-      this.carNo="80"
+      this.carNo="粤A898TV"
     }, 500);
   },
   methods:{
