@@ -26,7 +26,7 @@
             <div class="keyboardList">
               <div class="keyboardItem keyboardButton" :class="{disable:curIndex===0 || isHKCarNo}" @click="curIndex!==0 && !isHKCarNo?changeType(keyboardType=='ZH'?'EN':'ZH'):''">{{keyboardType=="ZH"?'ABC':'中文'}}</div>
               <div class="keyboardItem" :class="{disable:disable(item)}"  @click="itemClick(item)" v-for="item in thirdValue" :key="item">{{item}}</div>
-              <div class="keyboardItem keyboardButton"  @click="removeItem()"><img src="../../static/Delete.png"></div>
+              <div class="keyboardItem keyboardButton"  @click="removeItem()"><img src="../../static/Delete.png" alt=""></div>
             </div>
         </div>
       </div>
@@ -116,8 +116,7 @@ export default /*#__PURE__*/{
   },
   methods: {
     bodyClickClose(){
-      if(this.showKeyboard = true){
-        // this.showKeyboard = false;
+      if(this.showKeyboard){
         this.closeKeyboard()
       }
     },
@@ -152,6 +151,8 @@ export default /*#__PURE__*/{
         if (this.carNumber.slice(0, this.curIndex).every(item => item)) {
           if(this.completeHideKeyboard){
             this.closeKeyboard();
+          }else{
+            this.curIndex= Math.min(this.curIndex+1,this.carNumber.length-1)
           }
         } else {
           for (let i = 0; i < this.curIndex; i++) {
@@ -216,7 +217,6 @@ export default /*#__PURE__*/{
   text-align: center;
 }
 .title{
-  font-size: 12px;
   color: rgba(0, 0, 0, 0.6);
   padding: 14px 0 20px;
   text-align: left;
@@ -262,7 +262,7 @@ export default /*#__PURE__*/{
   border-radius: 2px;
   background: #ededed;
   position: absolute;
-  left: 44px;
+  left: 40px;
 }
 .newSource {
   writing-mode: vertical-lr;
@@ -274,7 +274,8 @@ export default /*#__PURE__*/{
   border: 1px solid #3f9ffd;
   color: rgba(0, 0, 0, 0.3)
 }
-.ani:before {
+
+/* .ani::after {
   content: "";
   position: absolute;
   width: 2px;
@@ -285,8 +286,8 @@ export default /*#__PURE__*/{
   margin-top: -11px;
   left: 50%;
   margin-left: -1px;
-  animation: inputAni 1.5s infinite steps(1, start)
-}
+  animation: inputAni 1s infinite;
+} */
 .keyboard {
   position: fixed;
   z-index: 10000;

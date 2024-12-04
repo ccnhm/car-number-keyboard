@@ -4,7 +4,7 @@
       <div class="inputItem" :class="{active:curIndex===index}" v-for="(item,index) in 8" :key="index"  @click="inputClick(index)">{{carNoChar(index)}}</div>  
     </div> -->
     <div class="box">
-      <carNumberKeyboard  :value="carNo" :firstFocus="true"  @onChange="keyboardChange"></carNumberKeyboard>
+      <carNumberKeyboard title="请输入车牌" :HkCarNoSupport="true"  :value="carNo" :firstFocus="true" :completeHideKeyboard="false"  @onChange="keyboardChange"></carNumberKeyboard>
     </div>
   
 </div>
@@ -41,7 +41,7 @@ export default {
       return this.car[index]
     },
     keyboardChange(car,isHkCar){
-       console.log(car,isHkCar)
+      //  console.log(car,isHkCar)
       this.carNo=car.join("")
     //console.log(2222,this.carNo)
 
